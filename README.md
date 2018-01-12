@@ -12,7 +12,7 @@ Randmoji can generate male and female Bitmoji avatars. No two avatars are simila
 
 ## Using the program
 
-Using Randmoji could not be any simpler! Simply fork the project from GitHub and run the only JavaScript file with Node. The program takes only one argument: the sex of the Bitmoji that you want to be generated. This is because each sex has different attributes on the list that Randmoji polls from. Here's the program's syntax:
+Using Randmoji could not be any simpler! Simply fork the project from GitHub and run the only JavaScript file with Node. The program takes only one argument: the sex of the Bitmoji that you want to be generated. The options are `male` or `female`. This argument is needed because each sex has different attributes on the list that Randmoji polls from. Here's the program's syntax:
 
 ```shell
 node randmoji.js <sex>
