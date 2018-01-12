@@ -1,5 +1,6 @@
 const bitmoji = require('./JSON/bitmoji.json');
 const comics = require('./JSON/comics.json');
+const args = process.argv;
 
 function randInt(max) {
 	return Math.floor(Math.random() * max);
@@ -13,16 +14,15 @@ function randBitmoji(sex) {
 	let pd2 = [];
 	let colours = [];
 	let body = [];
-	let url = '';
-	url += 'https://render.bitstrips.com//render/';
+	let url = 'https://render.bitstrips.com//render/';
 	url += comics.imoji[randInt(comics.imoji.length)].comic_id;
 	url += '/316830037_16_s4-v1.png?'
 
 	//get all JSON elements
-	for (var i = 0; i < jLen(bitmoji[sex]); i++) {
+	for (let i = 0; i < jLen(bitmoji[sex]); i++) {
 		let counter = Object.keys(bitmoji[sex])[i];
 		if (typeof bitmoji[sex][counter] === 'object') {
-			let attribute = JSON.stringify(bitmoji[sex][counter][randInt(bitmoji[sex][counter].length)]);
+			const attribute = JSON.stringify(bitmoji[sex][counter][randInt(bitmoji[sex][counter].length)]);
 			pd2.push(attribute.substr(1,attribute.length-2));
 		}
 	}
@@ -30,7 +30,7 @@ function randBitmoji(sex) {
 	let build = JSON.stringify(bitmoji[sex]['build'][randInt(jLen(bitmoji[sex]['build']))]);
 	body.push(build.substr(1,build.length-2));
 
-	for (var i = 0; i < jLen(bitmoji[sex]['colors']); i++) {
+	for (let i = 0; i < jLen(bitmoji[sex]['colors']); i++) {
 		let color = '"'+bitmoji[sex]['colors'][i][Object.keys(bitmoji[sex]['colors'][i])[0]];
 		color += '":' + randInt(16777216);
 		colours.push(color);
@@ -42,7 +42,7 @@ function randBitmoji(sex) {
 	}
 	else {
 		pd2 = pd2.slice(0,pd2.length-5);
-		let chestSize = JSON.stringify(bitmoji[sex]['chestSize'][randInt(jLen(bitmoji[sex]['chestSize']))]);
+		const chestSize = JSON.stringify(bitmoji[sex]['chestSize'][randInt(jLen(bitmoji[sex]['chestSize']))]);
 		body.push(chestSize.substr(1,chestSize.length-2));
 	}
 
@@ -52,4 +52,8 @@ function randBitmoji(sex) {
 	url += '&cropped="body"&scale=3&style=4'
 
 	return url;
+}
+
+if (args.length > 2 && args.length < 4) {
+	console.log(randBitmoji(args[2]));
 }
