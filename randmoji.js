@@ -14,9 +14,7 @@ function randBitmoji(sex) {
 	let pd2 = [];
 	let colours = [];
 	let body = [];
-	let url = 'https://render.bitstrips.com//render/';
-	url += comics.imoji[randInt(comics.imoji.length)].comic_id;
-	url += '/316830037_16_s4-v1.png?'
+	let url = `https://render.bitstrips.com//render/${comics.imoji[randInt(comics.imoji.length)].comic_id}/316830037_16_s4-v1.png?`;
 
 	//get all JSON elements
 	for (let i = 0; i < jLen(bitmoji[sex]); i++) {
@@ -46,9 +44,9 @@ function randBitmoji(sex) {
 		body.push(chestSize.substr(1,chestSize.length-2));
 	}
 
-	url += 'pd2={'+pd2+'}&colours={'+colours+'}&body={'+body+'}&sex='+bitmoji[sex]['sex'];
-	url += '&outfit='+bitmoji[sex]['outfit'][randInt(bitmoji[sex]['outfit'].length)];
-	url += '&proportion='+bitmoji[sex]['proportion'][randInt(bitmoji[sex]['proportion'].length)];
+	url += `pd2={${pd2}}&colours={${colours}}&body={${body}}&sex=${bitmoji[sex]['sex']}`;
+	url += `&outfit=${bitmoji[sex]['outfit'][randInt(bitmoji[sex]['outfit'].length)]}`;
+	url += `&proportion=${bitmoji[sex]['proportion'][randInt(bitmoji[sex]['proportion'].length)]}`;
 	url += '&cropped="body"&scale=3&style=4'
 
 	return url;
