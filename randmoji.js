@@ -1,5 +1,5 @@
-const bitmoji = require('./bitmoji.json');
-const comics = require('./comics.json');
+const bitmoji = require('./JSON/bitmoji.json');
+const comics = require('./JSON/comics.json');
 
 function randInt(max) {
 	return Math.floor(Math.random() * max);
