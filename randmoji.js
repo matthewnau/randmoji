@@ -27,7 +27,7 @@ function randBitmoji(sex) {
 		}
 	}
 
-	let build = JSON.stringify(bitmoji[sex]['build'][randInt(jLen(bitmoji[sex]['build']))]);
+	const build = JSON.stringify(bitmoji[sex]['build'][randInt(jLen(bitmoji[sex]['build']))]);
 	body.push(build.substr(1,build.length-2));
 
 	for (let i = 0; i < jLen(bitmoji[sex]['colors']); i++) {
