@@ -1,13 +1,13 @@
 # Randmoji
-This repository is my attempt at deciphering Bitmoji's private API. This allows you to manipulate combinations for the Bitmoji avatars, and to render any one that you would want in high resolution. In the process of reverse engineering Bitmoji, I designed this random generator in order to test that my understanding of the API was correct. This turned into a fun little project in itself, since the random generator comes up with the wackiest combinations!
+This is a random generator for making fun, and wacky random Bitmoji avatars! The Node.js file uses the private API to render a completely unique Bitmoji from a list of possible attributes.
 
-Randmoji can generate male and female Bitmoji avatars. No two avatars are similar. Every single one consists of multiple different combinations.
+Randmoji can generate male and female Bitmoji avatars. No two avatars are similar. Every single one consists of multiple different combinations. See what funny combinations you can find!
 
 ---
 
 ## Understanding the Bitmoji API
 
-In order to create a Bitmoji, you must provide a unique user-id. You can either use your own, or use someone else's since you are directly overriding the values associated with it. Look at the following example image URL:
+In order to create a random Bitmoji, I had to understand how the API works. So here's what I figured out. You must provide a unique user-id. You can either use your own, or use someone else's since you are directly overriding the values associated with it. Look at the following example image URL:
 
 ```
 https://render.bitstrips.com//render/10221787/316830037_16_s4-v1.png?pd2={%22cranium%22:%22cranium_bm35%22,%22forehead%22:%22forehead_bm1%22,%22hair_back%22:%22hair_back_blank%22,%22hair_front%22:%22hair_front_bm35%22,%22hairbottom%22:%22hairbottom_blank%22,%22beard%22:%22beard_bm4_1%22,%22stachin%22:%22stachin_bm1_1%22,%22stachout%22:%22stachout_bm1_1%22,%22mouth%22:%22mouth_bm3%22,%22tongue%22:%22tongue_bm1_1%22,%22brow_L%22:%22brow_bm3%22,%22brow_R%22:%22brow_bm3%22,%22detail_T%22:%22detail_T_bm14%22,%22detail_L%22:%22_blank%22,%22detail_R%22:%22_blank%22,%22detail_E_L%22:%22detail_E_bm7%22,%22detail_E_R%22:%22detail_E_bm7%22,%22nose%22:%22nose_bm15%22,%22hat%22:%22hat_bmfloppy%22,%22glasses%22:%22glasses_bm3d%22}&colours={%22ff9866%22:9476876,%22ffcc99%22:5988934,%224f453e%22:12795028,%22926715%22:2073019,%2236a7e9%22:921868,%226f4b4b%22:8626436}&body={%22body_type%22:1}&sex=1&outfit=889221&proportion=3&cropped=%22body%22&scale=2&style=4
