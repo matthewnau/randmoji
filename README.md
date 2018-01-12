@@ -48,3 +48,9 @@ Not all of these values need to be used or provided. Simply add any parameter th
 <p align="center">
 <img src="https://render.bitstrips.com//render/10221787/316830037_16_s4-v1.png?pd2={%22cranium%22:%22cranium_bm35%22,%22forehead%22:%22forehead_bm1%22,%22hair_back%22:%22hair_back_blank%22,%22hair_front%22:%22hair_front_bm35%22,%22hairbottom%22:%22hairbottom_blank%22,%22beard%22:%22beard_bm4_1%22,%22stachin%22:%22stachin_bm1_1%22,%22stachout%22:%22stachout_bm1_1%22,%22mouth%22:%22mouth_bm3%22,%22tongue%22:%22tongue_bm1_1%22,%22brow_L%22:%22brow_bm3%22,%22brow_R%22:%22brow_bm3%22,%22detail_T%22:%22detail_T_bm14%22,%22detail_L%22:%22_blank%22,%22detail_R%22:%22_blank%22,%22detail_E_L%22:%22detail_E_bm7%22,%22detail_E_R%22:%22detail_E_bm7%22,%22nose%22:%22nose_bm15%22,%22hat%22:%22hat_bmfloppy%22,%22glasses%22:%22glasses_bm3d%22}&colours={%22ff9866%22:9476876,%22ffcc99%22:5988934,%224f453e%22:12795028,%22926715%22:2073019,%2236a7e9%22:921868,%226f4b4b%22:8626436}&body={%22body_type%22:1}&sex=1&outfit=889221&proportion=3&cropped=%22body%22&scale=1&style=4"/>
 </p>
+
+---
+
+## Product disclaimer
+
+This code is in no way affiliated with, authorized, maintained, sponsored or endorsed by Bitmoji or any of its affiliates or subsidiaries. This is an independent and unofficial product. Use at your own risk.
