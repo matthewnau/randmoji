@@ -2,25 +2,20 @@ const bitmoji = require('./JSON/bitmoji.json');
 const comics = require('./JSON/comics.json');
 const args = process.argv;
 
-function randInt(max) {
-	return Math.floor(Math.random() * max);
-}
+const randInt = max => Math.floor(Math.random() * max);
 
 // return the length of a json object
-function jLen(object) {
-	return Object.keys(object).length;
-}
+const jLen = object => Object.keys(object).length;
 
 // convert a json object to string
-function jStr(object) {
-	return JSON.stringify(object);
-}
+const jStr = object => JSON.stringify(object);
 
 function genColors(avatar, sex) {
 	let colors = [];
 	for (let i = 0; i < jLen(avatar[sex]['colors']); i++) {
-		let color = `"${avatar[sex]['colors'][i][Object.keys(avatar[sex]['colors'][i])[0]]}":${randInt(16777216)}`;
-		colors.push(color);
+		// assign the current color a random value
+		let color = avatar[sex]['colors'][i][Object.keys(avatar[sex]['colors'][i])[0]];
+		colors.push(`"${color}":${randInt(16777216)}`);
 	}
 	return colors;
 }
@@ -34,26 +29,22 @@ function genAttributes(avatar, sex) {
 			attributes.push(attribute.substr(1,attribute.length-2));
 		}
 	}
-	return attributes.slice(0,attributes.length-(bitmoji[sex]['sex']+3));
+	return attributes.slice(0,attributes.length-(avatar[sex]['sex']+3));
 }
 
 function genBody(avatar, sex) {
 	let body = [];
 
-	const build = jStr(bitmoji[sex]['build'][randInt(jLen(bitmoji[sex]['build']))]);
+	const build = jStr(avatar[sex]['build'][randInt(jLen(avatar[sex]['build']))]);
 	body.push(build.substr(1,build.length-2));
 	if (sex !== 'male') {
-		const chestSize = jStr(bitmoji[sex]['chestSize'][randInt(jLen(bitmoji[sex]['chestSize']))]);
+		const chestSize = jStr(avatar[sex]['chestSize'][randInt(jLen(avatar[sex]['chestSize']))]);
 		body.push(chestSize.substr(1,chestSize.length-2));
 	}
 	return body;
 }
 
 function genUrl(avatar, sex) {
-	if (avatar === 'bitmoji') {
-		avatar = bitmoji;
-	}
-
 	let comic = comics.imoji[randInt(comics.imoji.length)].comic_id;
 	let attributes = genAttributes(avatar,sex);
 	let colors = genColors(avatar,sex);
@@ -69,5 +60,5 @@ function genUrl(avatar, sex) {
 }
 
 if (args.length > 2 && args.length < 4) {
-	console.log(genUrl('bitmoji',args[2]));
+	console.log(genUrl(bitmoji,args[2]));
 }
